@@ -83,7 +83,7 @@ class Map extends React.Component<{}, { lat: number, lon: number, direction: num
                 >
                     <Marker latitude={this.state.lat} longitude={this.state.lon}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="24" width="24" transform={`rotate(${this.state.direction*(180/Math.PI)} 0 0 )`}>
-                            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                            <path className={this.state.connected ? "text-green-500 fill-current" : "fill-current text-red-500"} d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
                         </svg>
 
                     </Marker>
@@ -93,7 +93,7 @@ class Map extends React.Component<{}, { lat: number, lon: number, direction: num
                     Center Plane
                     </div>
                     <div>
-                <input type="checkbox" className="w-8 h-8 cursor-pointer" checked={this.state.lockedon} onChange={this.HandleCheckBox}  ></input>
+                        <input type="checkbox" className="w-8 h-8 cursor-pointer rounded-md text-blue-500 ring-0	focus:ring-0	focus:ring-offset-0" checked={this.state.lockedon} onChange={this.HandleCheckBox}  ></input>
                 </div>
                 </div>
                 {/*<button onClick={()=>this.GetPlaneInfo} className="fixed top-4 left-4 z-10 bg-blue-500 px-4 py-2 hover:bg-blue-400 text-white focus:bg-blue-600 rounded-md">Update Position</button>*/}
